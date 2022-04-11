@@ -3,11 +3,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { makeStyles } from '@mui/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { useForm, useFormState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Button from '@mui/material/Button';
 import CVLook from './CVLook';
 import Checkbox from '@mui/material/Checkbox';
-import { TextareaAutosize } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { selectSkill, setSkillsInfo, selectIsShown } from '../redux/slicers/skillsSlice';
@@ -218,7 +217,7 @@ function Skills() {
           type='submit'
           className={styles.nextBtn}
           variant='outlined'
-          onClick={() => editHandler()}
+          onClick={editHandler}
         //disabled={checkDisabled}
         >
           Next

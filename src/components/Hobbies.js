@@ -147,10 +147,6 @@ function Hobbies() {
   }, [watch('row')])
 
   const removeHobbie = (id) => {
-
-    console.log(id);
-
-    //dispatch(setWorkingInfo(infoWorking.filter(p => p.id !== id)))
     setValue('row', [...watch('row').filter(p => p.id !== id)]);
 
   }
@@ -219,7 +215,7 @@ function Hobbies() {
           type='submit'
           className={styles.nextBtn}
           variant='outlined'
-          onClick={() => editHandler()}
+          onClick={editHandler} // ete chka parameter () => editHandler() senc mi gri, gri senc editHandler
         //disabled={checkDisabled}
         >
           Next

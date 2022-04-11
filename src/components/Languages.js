@@ -89,11 +89,8 @@ function Languages() {
 
     const {
         register,
-        formState: { errors },
         watch,
-        handleSubmit,
         setValue,
-        control,
     } = useForm({
         mode: "all",
         defaultValues: {
@@ -234,7 +231,7 @@ function Languages() {
                     type='submit'
                     className={styles.nextBtn}
                     variant='outlined'
-                    onClick={() => editHandler()}
+                    onClick={editHandler}
                 //disabled={checkDisabled}
                 >
                     Next

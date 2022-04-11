@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUser, setUserInfo } from '../redux/slicers/personalSlice';
 import { useForm } from "react-hook-form";
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
 import CVLook from './CVLook';
 import { useHistory } from 'react-router-dom';
 import { TextareaAutosize } from '@mui/material';
@@ -222,7 +221,7 @@ function Personal() {
                 </div>
 
                 <br />
-                <Button type='submit' className={styles.nextBtn} variant='outlined' onClick={() => editHandler()} >Next</Button>
+                <Button type='submit' className={styles.nextBtn} variant='outlined' onClick={editHandler} >Next</Button>
             </div>
 
             <div className={styles.cvPaperArea}>
