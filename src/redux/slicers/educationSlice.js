@@ -10,7 +10,7 @@ const initialState = {
         id: Math.random(),
         name: "",
         major: "",
-        grade:"",
+        grade: "",
         startDate: null,
         endDate: null,
         description: "",
@@ -28,7 +28,7 @@ const educationSlice = createSlice({
     setEducationInfo(state, { payload }) {
       state.educationInfo = payload;
     },
-    setIsShown(state, {payload}) {
+    setIsShown(state, { payload }) {
       state.isShown = payload;
     }
   },

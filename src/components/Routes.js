@@ -8,20 +8,23 @@ import HonorsAndAwards from "./HonorsAndAwards";
 import Skills from "./Skills";
 import Hobbies from "./Hobbies";
 import Languages from "./Languages";
+import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
 
 
 
 const Routes = () => {
     return (
         <Switch>
-            <Route path='/' exact component={ Personal}/>
-            <Route path="/CVLook" exact component={CVLook} />
-            <Route path="/work" exact component={Work} />
-            <Route path="/education" exact component={Education} />
-            <Route path="/honorsandawards" exact component={HonorsAndAwards} />
-            <Route path="/skills" exact component={Skills} />
-            <Route path="/hobbies" exact component={Hobbies} />
-            <Route path="/languages" exact component={Languages} />
+            <Route path='/' exact component={ Login }/>
+            <PrivateRoute path='/personal' exact component={ Personal }/>
+            <PrivateRoute path="/CVLook" exact component={CVLook} />
+            <PrivateRoute path="/work" exact component={Work} />
+            <PrivateRoute path="/education" exact component={Education} />
+            <PrivateRoute path="/honorsandawards" exact component={HonorsAndAwards} />
+            <PrivateRoute path="/skills" exact component={Skills} />
+            <PrivateRoute path="/hobbies" exact component={Hobbies} />
+            <PrivateRoute path="/languages" exact component={Languages} />
 
         </Switch>
     );

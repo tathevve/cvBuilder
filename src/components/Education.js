@@ -83,6 +83,8 @@ function Education() {
   const hasMajor = useSelector(selectIsShown);
   const eduInfo = useSelector(selectEducation);
 
+  console.log(hasMajor,'hasMajors')
+
   const { register, watch, setValue, control } = useForm({
     mode: "all",
     defaultValues: {
@@ -176,100 +178,100 @@ function Education() {
 
         {watch("row")?.length > 0 && hasMajor
           ? watch("row").map((item, index) => (
-              <div key={item.id}>
-                <div className={styles.oneLineInput}>
-                  <TextField
-                    focused
-                    id="outlined-search"
-                    label="Name"
-                    placeholder="Harvard University"
-                    type="search"
-                    {...register(`row[${index}].name`)}
-                    className={styles.oneLineInputField}
-                    onChange={(e) =>
-                      setValue(`row[${index}].name`, e.target.value)
-                    }
-                  />
-                </div>
-                <div className={styles.oneLineInput}>
-                  <TextField
-                    focused
-                    id="outlined-search"
-                    label="Major"
-                    placeholder="Masters in Computer Science"
-                    type="search"
-                    {...register(`row[${index}].major`)}
-                    className={styles.oneLineInputField}
-                    onChange={(e) =>
-                      setValue(`row[${index}].major`, e.target.value)
-                    }
-                  />
-                </div>
-                <div className={styles.oneLineInput}>
-                  <TextField
-                    focused
-                    id="outlined-search"
-                    label="Grade"
-                    placeholder="7.2 CGPA"
-                    type="search"
-                    {...register(`row[${index}].grade`)}
-                    className={styles.oneLineInputField}
-                    onChange={(e) =>
-                      setValue(`row[${index}].grade`, e.target.value)
-                    }
-                  />
-                </div>
-                <div className={styles.nameArea}>
-                  <DatePicker
-                    label="Start Date"
-                    value={watch(`row[${index}].startDate`)}
-                    onChange={(newValue) =>
-                      setValue(`row[${index}].startDate`, newValue)
-                    }
-                    renderInput={(params) => (
-                      <TextField variant="outlined" {...params} />
-                    )}
-                  />
-
-                  <DatePicker
-                    label="End Date"
-                    value={watch(`row[${index}].endDate`)}
-                    onChange={(newValue) =>
-                      setValue(`row[${index}].endDate`, newValue)
-                    }
-                    renderInput={(params) => (
-                      <TextField variant="outlined" {...params} />
-                    )}
-                  />
-                </div>
-                <br />
-                <br />
-                <div>
-                  <TextareaAutosize
-                    focused="true"
-                    aria-label="empty textarea"
-                    {...register(`row[${index}].description`)}
-                    placeholder=""
-                    maxRows={8}
-                    minRows={7}
-                    style={{ width: 200 }}
-                    onChange={(e) =>
-                      setValue(`row[${index}].description`, e.target.value)
-                    }
-                  />
-                </div>
-
-                <div>
-                  <Button
-                    variant="outlined"
-                    className={styles.deleteBtn}
-                    startIcon={<DeleteIcon />}
-                    onClick={() => removeExperience(watch(`row[${index}].id`))}
-                    disabled={removeButtonDisabled}
-                  ></Button>
-                </div>
+            <div key={item.id}>
+              <div className={styles.oneLineInput}>
+                <TextField
+                  focused
+                  id="outlined-search"
+                  label="Name"
+                  placeholder="Harvard University"
+                  type="search"
+                  {...register(`row[${index}].name`)}
+                  className={styles.oneLineInputField}
+                  onChange={(e) =>
+                    setValue(`row[${index}].name`, e.target.value)
+                  }
+                />
               </div>
-            ))
+              <div className={styles.oneLineInput}>
+                <TextField
+                  focused
+                  id="outlined-search"
+                  label="Major"
+                  placeholder="Masters in Computer Science"
+                  type="search"
+                  {...register(`row[${index}].major`)}
+                  className={styles.oneLineInputField}
+                  onChange={(e) =>
+                    setValue(`row[${index}].major`, e.target.value)
+                  }
+                />
+              </div>
+              <div className={styles.oneLineInput}>
+                <TextField
+                  focused
+                  id="outlined-search"
+                  label="Grade"
+                  placeholder="7.2 CGPA"
+                  type="search"
+                  {...register(`row[${index}].grade`)}
+                  className={styles.oneLineInputField}
+                  onChange={(e) =>
+                    setValue(`row[${index}].grade`, e.target.value)
+                  }
+                />
+              </div>
+              <div className={styles.nameArea}>
+                <DatePicker
+                  label="Start Date"
+                  value={watch(`row[${index}].startDate`)}
+                  onChange={(newValue) =>
+                    setValue(`row[${index}].startDate`, newValue)
+                  }
+                  renderInput={(params) => (
+                    <TextField variant="outlined" {...params} />
+                  )}
+                />
+
+                <DatePicker
+                  label="End Date"
+                  value={watch(`row[${index}].endDate`)}
+                  onChange={(newValue) =>
+                    setValue(`row[${index}].endDate`, newValue)
+                  }
+                  renderInput={(params) => (
+                    <TextField variant="outlined" {...params} />
+                  )}
+                />
+              </div>
+              <br />
+              <br />
+              <div>
+                <TextareaAutosize
+                  focused="true"
+                  aria-label="empty textarea"
+                  {...register(`row[${index}].description`)}
+                  placeholder=""
+                  maxRows={8}
+                  minRows={7}
+                  style={{ width: 200 }}
+                  onChange={(e) =>
+                    setValue(`row[${index}].description`, e.target.value)
+                  }
+                />
+              </div>
+
+              <div>
+                <Button
+                  variant="outlined"
+                  className={styles.deleteBtn}
+                  startIcon={<DeleteIcon />}
+                  onClick={() => removeExperience(watch(`row[${index}].id`))}
+                  disabled={removeButtonDisabled}
+                ></Button>
+              </div>
+            </div>
+          ))
           : null}
 
         <br />
@@ -280,8 +282,11 @@ function Education() {
           onClick={editHandler} //ete parameter chka karas prosto senc tas voch te senc () => editHandler()
           disabled={checkDisabled}
         >
-          Next
-        </Button>
+          Nexta
+        </Button> 
+        <video playsInline loop src="blob:https://www.zara.com/6a309cb7-669c-400e-a88c-e3c98133fd2b">
+
+        </video>
       </form>
 
       <div className={styles.cvPaperArea}>
